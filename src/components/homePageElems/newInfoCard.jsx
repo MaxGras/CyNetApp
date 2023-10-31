@@ -6,8 +6,15 @@ const navigate = useNavigate();
 const handleNav=()=>{
     navigate(`/article/${id}`)
 }
+const bgVariants = [
+    'bg-backgroundArtcl1',  'bg-backgroundArtcl2',  'bg-backgroundArtcl3',  'bg-backgroundArtcl4'
+]
+
+
+let strStyle = `bg-no-repeat bg-contain bg-cover h-[25vh] w-[25vw] flex items-end justify-end `
+strStyle += ` ${bgVariants[id-1]}`;
 return(
-    <div className={`bg-backgroundArtcl${id} bg-no-repeat bg-contain bg-cover h-[25vh] w-[25vw] flex items-end justify-end `}>
+    <div className={strStyle}>
         <button onClick={handleNav} className="bg-[#FFF] text-[#000] py-4 px-12">ЧИТАТИ</button>
     </div>
 )

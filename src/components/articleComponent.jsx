@@ -20,7 +20,7 @@ function formatDateToCustom(inputDate) {
   }
 export default function ArticleComponent(){
     const {id} = useParams();
-    const [arcticle, setArcticle] = useState(
+    const [article, setArcticle] = useState(
       {
             id: null,
             name: '',
@@ -29,6 +29,7 @@ export default function ArticleComponent(){
             
         }
     )
+    const [error,setError] = useState(true);
     useEffect(()=>{
         handleFetch();
     },[]);
@@ -39,26 +40,33 @@ export default function ArticleComponent(){
         axios.get(articleURL)
         .then(function (response) {
              setArcticle(response.data);
+             setError(false);
            
         })
         .catch(function (error) {
     
-            console.error('Error: ', error);
+            setError(true);
         });
       }
     
 
       
 
-
-    return(
-        <div className="flex flex-col items-center gap-[2vh] py-[2%]">
-            <h2 className="text-4xl font-[800]">{arcticle.name}</h2>
-            <p className="w-[60%] leading-8 text-xl">{arcticle.value}</p>
-             <div className="self-start px-[10%]">
-                <span className="font-[600]">Дата: </span>
-                <span className="font-[600]">{formatDateToCustom(arcticle.date)}</span>
+      return (
+        error ? (
+          <div className="flex items-center justify-center h-[50vh]"><p className="text-5xl font-[800]">No such Article Found (404)</p></div>
+        ) : (
+          <div className="flex flex-col items-center gap-[2vh] py-[2%]">
+            <h2 className="text-4xl font-[800]">{article.name}</h2>
+            <p className="w-[60%] leading-8 text-xl">{article.value}</p>
+            <div className="self-start px-[10%]">
+              <span className="font-[600]">Дата: </span>
+              <span className="font-[600]">{formatDateToCustom(article.date)}</span>
             </div>
-        </div>
-    )
+          </div>
+        )
+      );
+      
+      
+      
 }
