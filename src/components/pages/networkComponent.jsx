@@ -1,14 +1,15 @@
 
 import { useEffect, useState } from "react"
 import axios from "axios";
-import NetworkButton from "./networkButtonComponent";
+import NetworkButton from "../_basic/networkButtonComponent";
+import { url } from "../_basic/url";
 export default function NewtworkComponent() {
     const [networks, setNetworks] = useState([]);
 
 
-    const url = 'http://178.136.240.245:50000/api/Net';
+    const urlNet = url+'/api/Net';
     const fetchData = () => {
-        axios.get(url)
+        axios.get(urlNet)
             .then(response => {
 
                 setNetworks(response.data);
@@ -21,7 +22,7 @@ export default function NewtworkComponent() {
     useEffect(() => {
         fetchData();
     }, [])
-    console.log(networks);
+ 
 
 
 

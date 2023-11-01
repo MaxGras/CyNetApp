@@ -4,11 +4,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 import CustomCard from './customCard';
 import axios from 'axios';
+import { url } from '../_basic/url';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 export default function SearchComponent() {
     const [header,setHeader] = useState('');
-    let newUrl = `http://178.136.240.245:50000/api/Article/search/${header}`
+    let newUrl = url+`/api/Article/search/${header}`
     const navigate = useNavigate();
 
 

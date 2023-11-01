@@ -1,4 +1,4 @@
-import NewInfoCard from "./newInfoCard";
+import NewInfoCard from "../_basic/newInfoCard";
 
 
 export default function NewInfo() {

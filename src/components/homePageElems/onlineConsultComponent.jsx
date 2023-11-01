@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CustomModal from "./customModal";
+import CustomModal from "../_basic/customModal";
 
 
 export default function OnlineConsult() {

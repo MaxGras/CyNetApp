@@ -3,6 +3,7 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
+import { url } from './url';
 import { useState } from 'react';
 export default function CustomModal({ open, handleClose }) {
     const [dataValue, setDataValue] = useState({
@@ -15,14 +16,14 @@ export default function CustomModal({ open, handleClose }) {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        console.log(dataValue);
+      
         setDataValue(prevDataValue => ({
             ...prevDataValue,
             [name]: value
         }));
     }
 
-    const apiUrl = 'http://178.136.240.245:50000/api/Form';
+    const apiUrl = url+ '/api/Form';
     const handleFetch = () => {
         axios.post(apiUrl, dataValue)
             .then((response) => {

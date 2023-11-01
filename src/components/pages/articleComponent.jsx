@@ -2,6 +2,7 @@ import { useParams } from "react-router"
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { url } from "../_basic/url";
 function formatDateToCustom(inputDate) {
     const date = new Date(inputDate);
 
@@ -33,7 +34,7 @@ export default function ArticleComponent(){
     useEffect(()=>{
         handleFetch();
     },[]);
-    let articleURL = `http://178.136.240.245:50000/api/Article/${id}`
+    let articleURL = url+`/api/Article/${id}`
     
     
     const handleFetch = () =>{
