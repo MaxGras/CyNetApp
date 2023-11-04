@@ -57,7 +57,7 @@ export default function EditNews() {
 
                 <ArticleCard key={item.id} name={item.name} value={item.value} id={item.id} setState={setArticles} deleteItem={handleDeleteItem} />
             ))}
-            <IconButton onClick={handleAddItem} size="large">
+            <IconButton sx={{aspectRatio:'1/1',marginInline:'auto', width: "50%"}} onClick={handleAddItem} size="large">
                 <AddCircleIcon sx={{fontSize:'100px'}}></AddCircleIcon>
             </IconButton>
         </div>

@@ -38,7 +38,7 @@ const handleFetch = ()=>{
 
         <div className='flex flex-col items-center gap-6 py-[2%]'>
             <TextField sx={{ width: "40%" }} onChange={handleChange} name='name' value={inputValue.name} label="Заголовок"></TextField>
-            <TextareaAutosize style={{ width: '40%' }} maxRows={25} onChange={handleChange} name='value' value={inputValue.value} label="Стаття"></TextareaAutosize>
+            <TextareaAutosize style={{ width: '40%', outlineWidth:'1px', outlineColor: "#000000", borderWidth:"1px" }} maxRows={25} onChange={handleChange} name='value' value={inputValue.value} label="Стаття"></TextareaAutosize>
             <Button onClick={handleFetch}
                 variant='containted'
                 sx={{ backgroundColor: '#000000', color: '#FFFFFF', paddingX: '2%', paddingY: '10px', "&:hover": { backgroundColor: '#FFFFFF', color: "#000000" } }}>

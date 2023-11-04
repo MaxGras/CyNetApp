@@ -19,7 +19,7 @@ import EditNews from './components/pages/admin/editNews';
 import { useState } from 'react';
 import EditArtCard from './components/pages/admin/editArtCard';
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <Router>
