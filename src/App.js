@@ -20,7 +20,7 @@ import EditNews from './components/pages/admin/editNews';
 import { useState, useRef } from 'react';
 import EditArtCard from './components/pages/admin/editArtCard';
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <Router>

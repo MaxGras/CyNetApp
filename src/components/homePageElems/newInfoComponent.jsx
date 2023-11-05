@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
 import NewInfoCard from "../_basic/newInfoCard";
+import axios from "axios";
+import { url } from "../_basic/url";
 
 
 export default function NewInfo() {
-    
+    const [newInfo, setNewInfo] = useState([]);
+    const newInfUrl = url + '/api/Article/0-4'
+   
+ 
+    useEffect(()=>{
+    fetchData();
+   },[]);
+
+   const fetchData = ()=>{
+    axios.get(newInfUrl)
+    .then(resp=>setNewInfo(resp.data))
+    .catch(err=>console.log(err));
+}
 
 
     return (
@@ -12,12 +27,12 @@ export default function NewInfo() {
             <h3 className='sm:text-[6rem] text-[3rem] lg:text-[4rem] self-start ml-[13%] font-[800]'>Що нового?</h3>
             <div className="flex flex-col gap-8">
                <div className="flex flex-col sm:flex-row gap-8">
-               <NewInfoCard id={1}/>
-                <NewInfoCard id={2}/>
+               <NewInfoCard  navigateId={newInfo[0]?.id} styleId={1}/>
+               <NewInfoCard   navigateId={newInfo[1]?.id}  styleId={2}/>
                </div>
                <div className="flex flex-col sm:flex-row gap-8">
-               <NewInfoCard id={3}/>
-                <NewInfoCard id={4}/>
+               <NewInfoCard   navigateId={newInfo[2]?.id}  styleId={3}/>
+               <NewInfoCard  navigateId={newInfo[3]?.id}  styleId={4}/>
                </div>
             </div>
         </div>
