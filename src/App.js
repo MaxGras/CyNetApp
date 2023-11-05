@@ -6,6 +6,7 @@ import {
   Routes,
 
 } from 'react-router-dom'
+
 import HomePage from './components/pages/homePage';
 import Header from './components/_basic/header';
 import NewtworkComponent from './components/pages/networkComponent';
@@ -16,17 +17,16 @@ import AdminPageMain from './components/pages/admin/adminPageMain';
 import ReadRequest from './components/pages/admin/readRequestPage';
 import EditNetworks from './components/pages/admin/editNetwork';
 import EditNews from './components/pages/admin/editNews';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import EditArtCard from './components/pages/admin/editArtCard';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <Router>
-      <Header></Header>
       <Routes>
         <Route exact path='/' element={
-          <HomePage />
+          <HomePage  />
         } />
         <Route path='/networks' element={
           <NewtworkComponent></NewtworkComponent>

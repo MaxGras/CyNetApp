@@ -11,7 +11,7 @@ const bgVariants = [
 ]
 
 
-let strStyle = `bg-no-repeat bg-contain bg-cover h-[25vh] w-[25vw] flex items-end justify-end `
+let strStyle = `bg-no-repeat sm:bg-contain bg-cover h-[25vh] w-[70vw] sm:w-[25vw] flex items-end justify-end `
 strStyle += ` ${bgVariants[id-1]}`;
 return(
     <div className={strStyle}>
