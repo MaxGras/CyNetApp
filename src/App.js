@@ -16,6 +16,7 @@ import PrivateRoute from './components/_basic/privateRouter';
 import AdminPageMain from './components/pages/admin/adminPageMain';
 import ReadRequest from './components/pages/admin/readRequestPage';
 import EditNetworks from './components/pages/admin/editNetwork';
+import ArticlePages from './components/pages/ArticlePages';
 import EditNews from './components/pages/admin/editNews';
 import { useState, useRef } from 'react';
 import EditArtCard from './components/pages/admin/editArtCard';
@@ -52,6 +53,10 @@ function App() {
            <Route path='/admin/editnews/:id' element={
           <PrivateRoute component={EditArtCard} isAuthenticated={isAuthenticated} />
         } />
+         <Route path='/articles' element={
+          <ArticlePages></ArticlePages>
+        } />
+
 
       </Routes>
     </Router>
